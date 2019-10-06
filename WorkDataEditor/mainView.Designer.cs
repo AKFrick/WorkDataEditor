@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.saveFile = new System.Windows.Forms.Button();
@@ -37,6 +35,7 @@
             this.uploadPlc = new System.Windows.Forms.Button();
             this.downloadPlc = new System.Windows.Forms.Button();
             this.grid = new System.Windows.Forms.DataGridView();
+            this.openDialog = new System.Windows.Forms.OpenFileDialog();
             this.returnStroke = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.forgeThickness = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dwell = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,11 +45,10 @@
             this.toolLocation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.traverseStep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fixedRotateStep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.variableRotateStep = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.travrotStep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.varRotateStep = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.travRotStep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rotTravStep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tongsClampForce = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.openDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.buttonPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -137,8 +135,8 @@
             this.toolLocation,
             this.traverseStep,
             this.fixedRotateStep,
-            this.variableRotateStep,
-            this.travrotStep,
+            this.varRotateStep,
+            this.travRotStep,
             this.rotTravStep,
             this.tongsClampForce});
             this.grid.Location = new System.Drawing.Point(3, 53);
@@ -147,116 +145,113 @@
             this.grid.Size = new System.Drawing.Size(755, 245);
             this.grid.TabIndex = 2;
             // 
-            // returnStroke
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.returnStroke.DefaultCellStyle = dataGridViewCellStyle1;
-            this.returnStroke.HeaderText = "Return stroke";
-            this.returnStroke.Name = "returnStroke";
-            this.returnStroke.ReadOnly = true;
-            this.returnStroke.Width = 60;
-            // 
-            // forgeThickness
-            // 
-            this.forgeThickness.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.forgeThickness.DefaultCellStyle = dataGridViewCellStyle2;
-            this.forgeThickness.HeaderText = "Forge thickness";
-            this.forgeThickness.Name = "forgeThickness";
-            this.forgeThickness.ReadOnly = true;
-            this.forgeThickness.Width = 98;
-            // 
-            // dwell
-            // 
-            this.dwell.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dwell.HeaderText = "Dwell";
-            this.dwell.Name = "dwell";
-            this.dwell.ReadOnly = true;
-            this.dwell.Width = 58;
-            // 
-            // returnSpeed
-            // 
-            this.returnSpeed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.returnSpeed.HeaderText = "Return speed";
-            this.returnSpeed.Name = "returnSpeed";
-            this.returnSpeed.ReadOnly = true;
-            this.returnSpeed.Width = 88;
-            // 
-            // forgeSpeed
-            // 
-            this.forgeSpeed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.forgeSpeed.HeaderText = "Forge speed";
-            this.forgeSpeed.Name = "forgeSpeed";
-            this.forgeSpeed.ReadOnly = true;
-            this.forgeSpeed.Width = 84;
-            // 
-            // swageOffset
-            // 
-            this.swageOffset.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.swageOffset.HeaderText = "Swage offset";
-            this.swageOffset.Name = "swageOffset";
-            this.swageOffset.ReadOnly = true;
-            this.swageOffset.Width = 87;
-            // 
-            // toolLocation
-            // 
-            this.toolLocation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.toolLocation.HeaderText = "Tool location";
-            this.toolLocation.Name = "toolLocation";
-            this.toolLocation.ReadOnly = true;
-            this.toolLocation.Width = 86;
-            // 
-            // traverseStep
-            // 
-            this.traverseStep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.traverseStep.HeaderText = "Traverse step";
-            this.traverseStep.Name = "traverseStep";
-            this.traverseStep.ReadOnly = true;
-            this.traverseStep.Width = 89;
-            // 
-            // fixedRotateStep
-            // 
-            this.fixedRotateStep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.fixedRotateStep.HeaderText = "Fixed rotate step";
-            this.fixedRotateStep.Name = "fixedRotateStep";
-            this.fixedRotateStep.ReadOnly = true;
-            this.fixedRotateStep.Width = 83;
-            // 
-            // variableRotateStep
-            // 
-            this.variableRotateStep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.variableRotateStep.HeaderText = "Var rotate step";
-            this.variableRotateStep.Name = "variableRotateStep";
-            this.variableRotateStep.ReadOnly = true;
-            this.variableRotateStep.Width = 93;
-            // 
-            // travrotStep
-            // 
-            this.travrotStep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.travrotStep.HeaderText = "Trav/rot step";
-            this.travrotStep.Name = "travrotStep";
-            this.travrotStep.ReadOnly = true;
-            this.travrotStep.Width = 87;
-            // 
-            // rotTravStep
-            // 
-            this.rotTravStep.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.rotTravStep.HeaderText = "Rot/trav step";
-            this.rotTravStep.Name = "rotTravStep";
-            this.rotTravStep.ReadOnly = true;
-            this.rotTravStep.Width = 87;
-            // 
-            // tongsClampForce
-            // 
-            this.tongsClampForce.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.tongsClampForce.HeaderText = "Tongs clamp force";
-            this.tongsClampForce.Name = "tongsClampForce";
-            this.tongsClampForce.ReadOnly = true;
-            this.tongsClampForce.Width = 88;
-            // 
             // openDialog
             // 
             this.openDialog.FileName = "openFileDialog1";
+            // 
+            // returnStroke
+            // 
+            this.returnStroke.DataPropertyName = "returnStroke";
+            this.returnStroke.HeaderText = "Return Stroke";
+            this.returnStroke.Name = "returnStroke";
+            this.returnStroke.ReadOnly = true;
+            this.returnStroke.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // forgeThickness
+            // 
+            this.forgeThickness.DataPropertyName = "forgeThickness";
+            this.forgeThickness.HeaderText = "Forge Thickness";
+            this.forgeThickness.Name = "forgeThickness";
+            this.forgeThickness.ReadOnly = true;
+            this.forgeThickness.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dwell
+            // 
+            this.dwell.DataPropertyName = "dwell";
+            this.dwell.HeaderText = "Dwell";
+            this.dwell.Name = "dwell";
+            this.dwell.ReadOnly = true;
+            this.dwell.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // returnSpeed
+            // 
+            this.returnSpeed.DataPropertyName = "returnSpeed";
+            this.returnSpeed.HeaderText = "Return Speed";
+            this.returnSpeed.Name = "returnSpeed";
+            this.returnSpeed.ReadOnly = true;
+            this.returnSpeed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // forgeSpeed
+            // 
+            this.forgeSpeed.DataPropertyName = "forgeSpeed";
+            this.forgeSpeed.HeaderText = "Forge Speed";
+            this.forgeSpeed.Name = "forgeSpeed";
+            this.forgeSpeed.ReadOnly = true;
+            this.forgeSpeed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // swageOffset
+            // 
+            this.swageOffset.DataPropertyName = "swageOffset";
+            this.swageOffset.HeaderText = "Swage Offset";
+            this.swageOffset.Name = "swageOffset";
+            this.swageOffset.ReadOnly = true;
+            this.swageOffset.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // toolLocation
+            // 
+            this.toolLocation.DataPropertyName = "toolLocation";
+            this.toolLocation.HeaderText = "Tool Location";
+            this.toolLocation.Name = "toolLocation";
+            this.toolLocation.ReadOnly = true;
+            this.toolLocation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // traverseStep
+            // 
+            this.traverseStep.DataPropertyName = "traverseStep";
+            this.traverseStep.HeaderText = "Traverse Step";
+            this.traverseStep.Name = "traverseStep";
+            this.traverseStep.ReadOnly = true;
+            this.traverseStep.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // fixedRotateStep
+            // 
+            this.fixedRotateStep.DataPropertyName = "fixedRotateStep";
+            this.fixedRotateStep.HeaderText = "Fixed Rotate Step";
+            this.fixedRotateStep.Name = "fixedRotateStep";
+            this.fixedRotateStep.ReadOnly = true;
+            this.fixedRotateStep.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // varRotateStep
+            // 
+            this.varRotateStep.DataPropertyName = "varRotateStep";
+            this.varRotateStep.HeaderText = "Var Rotate Step";
+            this.varRotateStep.Name = "varRotateStep";
+            this.varRotateStep.ReadOnly = true;
+            this.varRotateStep.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // travRotStep
+            // 
+            this.travRotStep.DataPropertyName = "travRotStep";
+            this.travRotStep.HeaderText = "Trav/Rot Step";
+            this.travRotStep.Name = "travRotStep";
+            this.travRotStep.ReadOnly = true;
+            this.travRotStep.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // rotTravStep
+            // 
+            this.rotTravStep.DataPropertyName = "rotTravStep";
+            this.rotTravStep.HeaderText = "Rot/Trav Step";
+            this.rotTravStep.Name = "rotTravStep";
+            this.rotTravStep.ReadOnly = true;
+            this.rotTravStep.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // tongsClampForce
+            // 
+            this.tongsClampForce.DataPropertyName = "tongsClampForce";
+            this.tongsClampForce.HeaderText = "Tongs Clamp Force";
+            this.tongsClampForce.Name = "tongsClampForce";
+            this.tongsClampForce.ReadOnly = true;
+            this.tongsClampForce.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // mainView
             // 
@@ -281,6 +276,7 @@
         private System.Windows.Forms.Button uploadPlc;
         private System.Windows.Forms.Button downloadPlc;
         private System.Windows.Forms.DataGridView grid;
+        private System.Windows.Forms.OpenFileDialog openDialog;
         private System.Windows.Forms.DataGridViewTextBoxColumn returnStroke;
         private System.Windows.Forms.DataGridViewTextBoxColumn forgeThickness;
         private System.Windows.Forms.DataGridViewTextBoxColumn dwell;
@@ -290,10 +286,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn toolLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn traverseStep;
         private System.Windows.Forms.DataGridViewTextBoxColumn fixedRotateStep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn variableRotateStep;
-        private System.Windows.Forms.DataGridViewTextBoxColumn travrotStep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn varRotateStep;
+        private System.Windows.Forms.DataGridViewTextBoxColumn travRotStep;
         private System.Windows.Forms.DataGridViewTextBoxColumn rotTravStep;
         private System.Windows.Forms.DataGridViewTextBoxColumn tongsClampForce;
-        private System.Windows.Forms.OpenFileDialog openDialog;
     }
 }
