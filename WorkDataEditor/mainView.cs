@@ -19,13 +19,7 @@ namespace WorkDataEditor
         {
             grid.AutoGenerateColumns = false;
             grid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-            DataGridViewCellStyle cellStyle = new DataGridViewCellStyle();
-            cellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;            
-            foreach (DataGridViewColumn col in grid.Columns)
-            {
-                col.DefaultCellStyle = cellStyle;
-            }
+            grid.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter; 
         }
         private void OpenFile_Click(object sender, EventArgs e)
         {
